@@ -32,6 +32,8 @@ Each model supports full **Create**, **Read**, **Update**, and **Delete (CRUD)**
 git clone https://github.com/your-username/SBA_319.git
 cd SBA_319
 
-node seed
+### 1. Seed Sample Data
+```node seed
 
-nodemon
+### 1. Run The Server
+```nodemon
