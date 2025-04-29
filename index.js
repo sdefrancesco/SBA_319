@@ -10,9 +10,10 @@ const db = mongoose.connect('mongodb+srv://sdefrancesco:DJIInspire193@perscholas
   .catch(err => console.error(err));
 
 // middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-p.use(bodyParser.urlencoded({ extended: true }))
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json()) 
+app.use(bodyParser.urlencoded({ extended: true }))
 
 
 
@@ -23,14 +24,13 @@ const Post = require('./models/post.js')
 app.get('/api/posts', async (req, res) => {
     try {
         const posts = await Post.find()
-
         res.json(posts)
     } catch(err) {
         console.log(err)
         res.send(err.message)
     }
 })
-app.post('/api/posts', async (req, res) => {
+app.post('/api/posts/new', async (req, res) => {
     try {
         let newPost = new Post(req.body)
         let savedPost = await newPost.save()
