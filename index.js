@@ -1,9 +1,19 @@
 const express = require('express')
+const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
 
 
 const app = express()
+const db = mongoose.connect('mongodb+srv://sdefrancesco:DJIInspire193@perscholas.cmjlsom.mongodb.net/', {
+  })
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.error(err));
 
+// middleware
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+p.use(bodyParser.urlencoded({ extended: true }))
+
 
 
 // import models
