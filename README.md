@@ -31,3 +31,7 @@ Each model supports full **Create**, **Read**, **Update**, and **Delete (CRUD)**
 ```bash
 git clone https://github.com/your-username/SBA_319.git
 cd SBA_319
+
+node seed
+
+nodemon
