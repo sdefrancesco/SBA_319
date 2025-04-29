@@ -36,8 +36,10 @@ cd SBA_319
 ### 2. Seed Sample Data
 ```bash
 node seed
+```
 
 ### 3. Run The Server
 ```bash 
 nodemon
+```
 
