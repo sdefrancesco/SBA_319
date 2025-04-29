@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const PostSchema = mongoose.Schema({
+const ArticleSchema = mongoose.Schema({
     title: {
       type: String,
       index: true, // Indexed for faster search and filtering
@@ -9,6 +9,9 @@ const PostSchema = mongoose.Schema({
       type: String,
       // Not indexed because this may be a paragraph or longer
     },
+    author: {
+        type: String
+    }
   }, { timestamps: true });
 
 module.exports = mongoose.model('Post', PostSchema);
