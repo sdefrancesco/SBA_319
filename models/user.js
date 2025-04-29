@@ -11,7 +11,7 @@ const userSchema = mongoose.Schema({
       index: true,  // Indexed for login etc
     },
     dob: {
-      type: Date,
+      type: String,
       // Not indexed because searching by DOB is rare
     },
   }, { timestamps: true });
