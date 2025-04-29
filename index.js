@@ -7,10 +7,13 @@ require('dotenv').config();
 const app = express()
 
 const MONGO_URI = process.env.MONGO_URI
-const db = mongoose.connect(MONGO_URI, {
+mongoose.connect(MONGO_URI)
+  .then(() => {
+    console.log('Connected to DB');
   })
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.error(err));
+  .catch((err) => {
+    console.error('Error connecting to DB:', err);
+  });
 
 // middleware
 // app.use(express.json());
